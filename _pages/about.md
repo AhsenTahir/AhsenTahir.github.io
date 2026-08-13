@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "Ahsen Tahir"
+seo_title: "Ahsen Tahir — Multi-Agent LLM Systems"
 author_profile: true
 redirect_from:
   - /about/
