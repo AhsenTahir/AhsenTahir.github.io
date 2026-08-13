@@ -304,7 +304,11 @@
   }
 
   li {
-    white-space: nowrap;
+    /* Upstream sets `nowrap` here, which clips any sidebar entry wider than the
+       column — a long affiliation like "University of New Brunswick" gets cut
+       off mid-word. Allow wrapping instead. */
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   a {
