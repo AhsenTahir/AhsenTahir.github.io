@@ -31,6 +31,13 @@ At the University of New Brunswick I am working on a narrower but related proble
 
 The connection to the agent work is direct. Multi-agent systems increasingly write and execute their own code, which means a vulnerability rate that is tolerable in a human-reviewed setting becomes something else entirely when the code path is autonomous. Evaluation has to catch up with autonomy.
 
+Agent security
+======
+
+I am also part of a collaborative, in-progress project on **defending LLM agents against indirect prompt injection** — the setting where an attacker plants instruction-like text in content the agent has to read, and the agent treats it as a command rather than as evidence. The interesting part, to me, is that this is an *authority* failure rather than a knowledge failure: the model knows what the user asked for, and still lets untrusted text override it.
+
+The work is unpublished, so I am keeping specifics off this page. I am glad to discuss it directly.
+
 What I want to work on next
 ======
 

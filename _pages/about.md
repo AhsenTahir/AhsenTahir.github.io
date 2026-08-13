@@ -14,6 +14,8 @@ My research is on **multi-agent systems built from large language models** — s
 
 At UNB I am working on a different question with the same underlying concern — whether we can trust what language models produce. I am benchmarking **security vulnerabilities in LLM-generated code**, measuring whether frontier models follow secure coding patterns or reproduce known anti-patterns at scale.
 
+Alongside that I am part of a collaborative project on **defending LLM agents against indirect prompt injection** (SASD), currently unpublished. I am happy to talk about it directly, but I am keeping the details off this page until the work is out.
+
 I am applying for **thesis-based MSc programs in Canada for Fall 2027**, and I am looking for a supervisor working on LLM agents, multi-agent coordination, or evaluation and safety of language models. My [CV](/cv/) has the full record, and I am reachable at [ahsentahir007@gmail.com](mailto:ahsentahir007@gmail.com).
 
 Research interests
@@ -21,6 +23,7 @@ Research interests
 - **Multi-agent LLM systems** — coordination, planning, and role delegation among autonomous agents
 - **Agent-to-agent communication** — protocols and information flow as an alternative to rigid, rule-based workflows
 - **Evaluation of agentic systems** — benchmark design and measurement on GAIA and similar long-horizon tasks
+- **Agent security** — keeping agents faithful to the user's instruction when untrusted content tries to redirect them
 - **Trustworthy code generation** — security properties of code produced by frontier language models
 
 Selected publications
