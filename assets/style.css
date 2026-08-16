@@ -1,0 +1,518 @@
+/* ============================================================
+   Ahsen Tahir — academic site
+   Single stylesheet, no build step, no JS.
+   ============================================================ */
+
+/* Dark theme, committed — the site renders dark regardless of the reader's
+   OS setting. The print block at the bottom flips back to black-on-white so
+   Cmd-P on the CV still produces a normal printable page. */
+
+:root {
+  --bg:            #14171a;
+  --bg-subtle:     #1c2024;
+  --text:          #e3e7ea;
+  --text-muted:    #a3adb6;
+  --text-faint:    #79838c;
+  --link:          #7cc4dd;
+  --link-hover:    #a8dcef;
+  --rule:          #282e33;
+  --rule-strong:   #394147;
+  --accent:        #7cc4dd;
+
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+               Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  --measure: 42rem;      /* readable line length for body copy */
+  --sidebar: 15rem;
+  --gap: 3rem;
+}
+
+/* Tell the browser the page is dark, so form controls, scrollbars and the
+   address bar on mobile match instead of flashing white. */
+:root { color-scheme: dark; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- links ---------- */
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* ---------- top navigation ---------- */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.masthead-inner {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  min-height: 3.5rem;
+}
+
+.site-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  padding: 0.75rem 0;
+  white-space: nowrap;
+}
+.site-name:hover { color: var(--text); text-decoration: none; }
+
+.site-nav {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 0.25rem;
+}
+
+.site-nav a {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  padding: 0.75rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- page frame ---------- */
+
+.page {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 2.75rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* ---------- author sidebar ---------- */
+
+.sidebar { position: sticky; top: 5rem; }
+
+.avatar {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1rem;
+  border: 1px solid var(--rule);
+}
+
+.sidebar h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.sidebar .bio {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.sidebar-links li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-bottom: 0.55rem;
+  color: var(--text-muted);
+}
+
+.sidebar-links .ico {
+  flex: 0 0 0.9rem;
+  display: flex;
+  justify-content: center;
+  color: var(--text-faint);
+  /* nudge the icon down onto the first text line's optical centre */
+  padding-top: 0.32em;
+}
+
+.sidebar-links .ico svg { display: block; }
+
+/* ---------- main content ---------- */
+
+.content { min-width: 0; }
+.content > *:first-child { margin-top: 0; }
+
+.content p,
+.content ul,
+.content ol { max-width: var(--measure); }
+
+h1 {
+  font-size: 1.9rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  margin: 2.75rem 0 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+p { margin: 0 0 1.05rem; }
+
+/* opening paragraph — slightly larger, sets the frame before the detail */
+.lede {
+  font-size: 1.12rem;
+  line-height: 1.55;
+  color: var(--text);
+  margin-bottom: 1.15rem;
+}
+
+ul, ol { padding-left: 1.25rem; margin: 0 0 1.05rem; }
+li { margin-bottom: 0.45rem; }
+
+strong { font-weight: 650; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.87em;
+  background: var(--bg-subtle);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+/* ---------- publication entries ---------- */
+
+.pub {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--rule);
+  max-width: var(--measure);
+}
+.pub:last-child { border-bottom: 0; }
+
+.pub-title {
+  display: block;
+  font-weight: 650;
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+a.pub-title:hover { color: var(--link); }
+
+.pub-authors {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.2rem;
+}
+.pub-authors .me { color: var(--text); font-weight: 650; }
+
+.pub-venue {
+  display: block;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+
+.pub-links {
+  font-size: 0.88rem;
+  color: var(--text-faint);
+}
+.pub-links a { margin-right: 0.15rem; }
+.pub-links .sep { margin: 0 0.4rem; }
+
+.pub-excerpt {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0.55rem;
+}
+
+/* ---------- venue badge (accepted papers) ---------- */
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-style: normal;   /* .pub-venue is italic; the badge should not inherit it */
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0.1rem 0.42rem;
+  margin-right: 0.5rem;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+
+/* ---------- keyword tags ---------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  border: 1px solid var(--rule);
+  background: var(--bg-subtle);
+  border-radius: 100px;
+  padding: 0.2rem 0.65rem;
+  white-space: nowrap;
+}
+
+/* subtitle under a project/paper title */
+.pub-subtitle {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- project cards ---------- */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.5rem;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.project {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.project img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg-subtle);
+}
+
+.project-body { padding: 1rem 1.1rem 1.15rem; }
+
+.project h3 { margin: 0 0 0.45rem; font-size: 1rem; line-height: 1.4; }
+
+.project p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+  max-width: none;
+}
+
+.project .stack {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.project .links { font-size: 0.88rem; }
+
+/* ---------- CV ---------- */
+
+.cv-entry { margin-bottom: 1.5rem; max-width: var(--measure); }
+
+.cv-entry .role {
+  font-weight: 650;
+  display: block;
+  line-height: 1.45;
+}
+
+.cv-entry .meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.cv-entry ul { margin-top: 0.4rem; margin-bottom: 0; }
+.cv-entry li { font-size: 0.95rem; }
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--rule-strong);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg-subtle);
+}
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- news list ---------- */
+
+.news { list-style: none; padding: 0; max-width: var(--measure); }
+.news li {
+  padding-left: 0;
+  margin-bottom: 0.7rem;
+  font-size: 0.96rem;
+}
+.news .date {
+  font-weight: 650;
+  color: var(--text);
+}
+
+/* ---------- callout ---------- */
+
+.note {
+  border-left: 3px solid var(--rule-strong);
+  padding: 0.15rem 0 0.15rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 1.5rem 0;
+  max-width: var(--measure);
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 1rem;
+  padding: 1.75rem 1.5rem 2.5rem;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+.site-footer .inner { max-width: 68rem; margin: 0 auto; }
+.site-footer a { color: var(--text-muted); }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 56rem) {
+  .page {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 1.25rem;
+    align-items: start;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .avatar { width: 6rem; height: 6rem; grid-row: span 3; margin-bottom: 0; }
+  .sidebar h2 { align-self: end; }
+  .masthead { position: static; }
+}
+
+@media (max-width: 34rem) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
+  .sidebar { grid-template-columns: 1fr; }
+  .avatar { grid-row: auto; margin-bottom: 0.85rem; }
+
+  /* compact header: the nav wraps to a second row here, so drop the
+     desktop min-height and vertical padding that would double-space it */
+  .masthead-inner {
+    padding: 0.5rem 1rem 0.6rem;
+    min-height: 0;
+    gap: 0 1rem;
+  }
+  .site-name { padding: 0.25rem 0; }
+  .site-nav { gap: 0.25rem 1rem; padding-bottom: 0; }
+  .site-nav a { font-size: 0.88rem; padding: 0.2rem 0; }
+
+  .page { padding: 1.5rem 1rem 3rem; }
+}
+
+/* ---------- print (so Cmd-P on /cv gives a usable PDF) ---------- */
+
+@media print {
+  /* Re-point the palette to ink-on-paper. Doing it at the token level means
+     every rule below inherits it — otherwise the dark --text would print as
+     pale grey on white and the CV would be unreadable. */
+  :root {
+    --bg:          #fff;
+    --bg-subtle:   #fff;
+    --text:        #000;
+    --text-muted:  #222;
+    --text-faint:  #444;
+    --link:        #000;
+    --link-hover:  #000;
+    --rule:        #bbb;
+    --rule-strong: #999;
+    --accent:      #000;
+    color-scheme: light;
+  }
+
+  .masthead, .site-footer, .sidebar, .btn { display: none !important; }
+  .page { display: block; max-width: none; padding: 0; }
+  body { font-size: 11pt; color: #000; background: #fff; }
+  a { color: #000; text-decoration: none; }
+  .content p, .content ul, .content ol, .cv-entry, .pub { max-width: none; }
+  h2 { margin-top: 1.2rem; }
+  .pub { break-inside: avoid; }
+  .cv-entry { break-inside: avoid; }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Ahsen Tahir</title>
+<meta name="description" content="Selected engineering and applied machine learning projects by Ahsen Tahir.">
+<link rel="canonical" href="https://ahsentahir.github.io/projects.html">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="site-name" href="index.html">Ahsen Tahir</a>
+    <nav class="site-nav">
+      <a href="publications.html">Publications</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="teaching.html">Teaching &amp; Outreach</a>
+      <a href="cv.html">CV</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+
+  <aside class="sidebar">
+    <img class="avatar" src="images/profile.jpg" alt="Ahsen Tahir">
+    <h2>Ahsen Tahir</h2>
+    <p class="bio">LLM post-training &middot; agentic AI &middot; AI safety</p>
+    <ul class="sidebar-links">
+      <li><span class="ico"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 0a5 5 0 0 0-5 5c0 3.6 5 11 5 11s5-7.4 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></span><span>Fredericton, NB, Canada</span></li>
+      <li><span class="ico"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 0 1 3.2v1.3h14V3.2L8 0zM2.4 5.8v6H1v1.6h14v-1.6h-1.4v-6H12v6h-1.6v-6H8.8v6H7.2v-6H5.6v6H4v-6H2.4z"/></svg></span><span>University of New Brunswick</span></li>
+      <li><span class="ico"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M1.5 3h13c.3 0 .5.2.5.5v9c0 .3-.2.5-.5.5h-13a.5.5 0 0 1-.5-.5v-9c0-.3.2-.5.5-.5zM8 8.9 13.6 4.4H2.4L8 8.9z"/></svg></span><a href="mailto:ahsentahir007@gmail.com">Email</a></li>
+      <li><span class="ico"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></span><a href="https://github.com/AhsenTahir">GitHub</a></li>
+      <li><span class="ico"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M3.6 1.6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM1.9 14.4V6.9h3.4v7.5H1.9zM7.2 6.9h3.3v1c.5-.8 1.4-1.3 2.6-1.3 2 0 3 1.3 3 3.7v4.1h-3.4v-3.6c0-1-.3-1.6-1.2-1.6-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.7v3.5H7.2V6.9z"/></svg></span><a href="https://www.linkedin.com/in/ahsentahir">LinkedIn</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <h1>Projects</h1>
+
+    <p>Applied machine-learning systems built end to end. Source for each is on <a href="https://github.com/AhsenTahir">GitHub</a>.</p>
+
+    <div class="projects">
+
+      <article class="project">
+        <img src="images/projects/trendxbtc.jpg" alt="Trend-X-BTC">
+        <div class="project-body">
+          <h3>Trend-X-BTC — sequence models for cryptocurrency forecasting</h3>
+          <p>A 30-day Bitcoin forecasting model: two stacked LSTM layers feeding <strong>4-head self-attention</strong>, with the attention output fused multiplicatively against the recurrent state before a dense projection. 35-step lookback window, dropout 0.3, trained with Adam under MSE.</p>
+          <p>The interesting part is the feature set rather than the architecture. Four heterogeneous signal families are aligned onto one daily index: OHLCV from Binance, news sentiment from Alpha Vantage, the Fear &amp; Greed index, technical indicators from CryptoCompare, and macro series from FRED. Preprocessing uses a scikit-learn <code>ColumnTransformer</code> with standardization, plus Gaussian-noise augmentation to enlarge a short financial time series.</p>
+          <div class="stack">PyTorch · LSTM + multi-head attention · scikit-learn · Firebase · Binance / Alpha Vantage / FRED APIs · Azure CI</div>
+          <div class="links"><a href="https://trendxbtc.vercel.app/">Live demo</a></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="images/projects/eeko-ai.jpg" alt="Eeko AI">
+        <div class="project-body">
+          <h3>Eeko AI — vision-language models for smallholder agriculture</h3>
+          <p>An agriculture assistant for smallholder farmers. <strong>Llama 3.2 11B Vision</strong>, served over Groq, runs the crop analyzer, insect detector and weed detector: field photographs are passed as base64 image content in a multimodal chat completion, under task-specific prompts that constrain the model to report growth stage, pest damage, canopy health, soil condition and density rather than free-form description.</p>
+          <p>A second conversational agent grounds its answers in <strong>NASA LARC</strong> satellite data for the user's region, so recommendations reflect local conditions instead of generic advice. Built on Next.js 14 with Clerk authentication; it drew 439+ visitors within hours of launch.</p>
+          <div class="stack">Llama 3.2 11B Vision · Groq · NASA LARC API · Next.js 14 · Clerk · Vercel</div>
+          <div class="links"><a href="https://github.com/AhsenTahir/eeko-ai-webapp">GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="images/projects/vision-play.jpg" alt="VisionPlay">
+        <div class="project-body">
+          <h3>VisionPlay — multi-object tracking in broadcast sports footage</h3>
+          <p>Football match analysis from broadcast video. A fine-tuned <strong>YOLO</strong> detector feeds <strong>ByteTrack</strong> for identity-stable multi-object tracking; the ball, which drops out of detection frequently, is recovered by interpolating its bounding box across missed frames. Team assignment runs <strong>k-means</strong> over the upper half of each player crop, using a corner-cluster heuristic to separate jersey pixels from pitch background.</p>
+          <p>The hard part is the camera. Broadcast footage pans and zooms constantly, so pixel coordinates say nothing about field position. Shi-Tomasi corners tracked by <strong>Lucas-Kanade pyramidal optical flow</strong> estimate per-frame camera translation, which is subtracted from every track before a <strong>perspective homography</strong> maps image points onto pitch coordinates. Only after that correction are the derived speed and distance metrics meaningful.</p>
+          <div class="stack">YOLO (Ultralytics) · ByteTrack · OpenCV · Lucas-Kanade optical flow · homography · k-means · Python</div>
+          <div class="links"><a href="https://github.com/AhsenTahir/VisionPlay-Next-Gen-Sports-Analytics-">GitHub</a></div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    &copy; 2026 Ahsen Tahir. <a href="mailto:ahsentahir007@gmail.com">ahsentahir007@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

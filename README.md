@@ -1,37 +1,71 @@
-# ahsentahir.github.io
+# ahsentahir.github.io — plain HTML version
 
-Academic website for Ahsen Tahir — multi-agent LLM systems, agent-to-agent
-communication, and evaluation of language-model agents.
+Static HTML. No Jekyll, no Ruby, no build step, no JavaScript.
 
-Built on the [Academic Pages](https://github.com/academicpages/academicpages.github.io)
-Jekyll template and served by GitHub Pages from the `main` branch.
+## Preview
 
-## Editing
+    cd ahsen-academic-site-html
+    python3 -m http.server 8000
 
-| What | Where |
+Then open <http://localhost:8000>. Edit any `.html` file and refresh the browser —
+changes appear immediately, there is nothing to rebuild.
+
+You can also just double-click `index.html` to open it in a browser directly. The
+local server is only slightly better because it matches how GitHub Pages will
+serve the site.
+
+## Layout
+
+| File | Page |
 |---|---|
-| Homepage, research statement, news | `_pages/about.md` |
-| Longer research narrative | `_pages/research.md` |
-| Publications (one file each) | `_publications/` |
-| Projects | `_portfolio/` |
-| Teaching & outreach | `_teaching/` |
-| CV page | `_pages/cv.md` (PDF at `files/Tahir_CV.pdf`) |
-| Name, links, Scholar/ORCID, sidebar | `_config.yml` |
-| Header nav | `_data/navigation.yml` |
+| `index.html` | Homepage — bio, research interests, selected publications, news |
+| `research.html` | Research narrative |
+| `publications.html` | Full publication list |
+| `projects.html` | Projects |
+| `teaching.html` | Teaching & outreach |
+| `cv.html` | CV |
+| `publication/*.html` | One page per paper |
+| `assets/style.css` | All styling — every page shares this one file |
 
-Push to `main` and GitHub Pages rebuilds automatically.
+## Editing notes
 
-## Local preview
+**Styling** lives entirely in `assets/style.css`. Change a colour or spacing there
+and every page updates. The site is **dark by default** for every visitor, whatever
+their OS is set to — the palette is the `:root` block at the top of the stylesheet.
+The `@media print` block at the bottom flips those same tokens back to black-on-white,
+so printing the CV still produces a normal page.
 
-Optional — GitHub Pages builds on push, so you can skip this entirely.
+**The sidebar and top nav are duplicated in every HTML file.** This is the cost of
+dropping Jekyll: to change your bio, location, or add a link (Google Scholar, ORCID),
+you must edit the same block in all 8 files. Find-and-replace across the folder is
+the practical way to do it.
 
-The `github-pages` gem hard-pins Liquid 4.0.3, which calls `String#tainted?`.
-That method was removed in Ruby 3.2, so **local builds need Ruby 3.1.x**
-(macOS system Ruby 2.6 and Homebrew Ruby 4.x both fail, for opposite reasons).
+**Adding a publication** means editing three files: `index.html` (selected list),
+`publications.html` (full list), and `cv.html` (CV list). They will silently drift
+apart if you forget one — check all three whenever a paper lands.
 
-    brew install ruby@3.1
-    PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH" bundle install
-    PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH" bundle exec jekyll serve
+**CV PDF:** `cv.html` has a print stylesheet. Open it, press Cmd-P, choose
+"Save as PDF", and you get a clean single-column CV with the nav and sidebar
+stripped out. Save it to `files/Tahir_CV.pdf` and uncomment the download button
+near the top of `cv.html`.
 
-Then open http://localhost:4000. Docker (`docker compose up`) also works if you
-have Docker Desktop installed.
+## Outstanding TODOs
+
+Search the folder for `TODO (Ahsen)` — each one marks something only you can supply:
+
+- **Author contribution statements** on both publication pages (highest value).
+- **Google Scholar and ORCID links** in the sidebar of all 8 files.
+- **GPA / scholarships** on `cv.html`.
+- **TA experience** on `teaching.html`, if you have any.
+- **The CV PDF** itself.
+
+## Deploying
+
+GitHub Pages serves plain HTML as-is. When you are happy with this version, copy
+these files to the root of the `AhsenTahir.github.io` repo, delete the Jekyll
+scaffolding (`_config.yml`, `_pages/`, `_layouts/`, `_includes/`, `_sass/`,
+`Gemfile`, etc.), and add an empty `.nojekyll` file at the root so Pages skips the
+Jekyll build entirely.
+
+Do that on a branch first and confirm it renders before touching `main` — `main`
+is what serves the live site.
