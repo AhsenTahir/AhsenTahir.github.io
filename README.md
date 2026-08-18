@@ -44,9 +44,9 @@ the practical way to do it.
 `publications.html` (full list), and `cv.html` (CV list). They will silently drift
 apart if you forget one. Check all three whenever a paper lands.
 
-**CV PDF:** the download button on `cv.html` serves `files/Tahir_CV.pdf`, which
-is compiled from the LaTeX source in `~/Desktop/coding/ahsen-cv/` (build with
-`tectonic Tahir_Research_CV.tex`). When the CV changes, recompile and copy the
+**CV PDF:** the download button on `cv.html` serves `files/AhsenTahirCV.pdf`,
+which is compiled from the LaTeX source in `~/Desktop/coding/ahsen-cv/` (build
+with `tectonic AhsenTahirCV.tex`). When the CV changes, recompile and copy the
 fresh PDF over, or the download drifts out of sync with the page. (`cv.html`
 also has a print stylesheet, so Cmd-P still produces a usable PDF of the page
 itself.)
