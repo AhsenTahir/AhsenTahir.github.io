@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Publications — Ahsen Tahir</title>
+<title>Publications | Ahsen Tahir</title>
 <meta name="description" content="Publications by Ahsen Tahir on multi-agent LLM systems, agent-to-agent communication, and AI safety.">
 <link rel="canonical" href="https://ahsentahir.github.io/publications.html">
 <link rel="icon" href="images/favicon.ico" sizes="any">
@@ -70,7 +70,7 @@
       <a class="pub-title" href="publication/beyond-rule-based-workflows.html">Beyond Rule-Based Workflows: An Information-Flow-Orchestrated Multi-Agents Paradigm via Agent-to-Agent Communication from CORAL</a>
       <span class="pub-authors">Xinxing Ren, Qianbo Zang, Caelum Forder, Suman Deb, <span class="me">Ahsen Tahir</span>, Roman J. Georgio, Peter Carroll, Zekun Guo</span>
       <span class="pub-venue">arXiv preprint arXiv:2601.09883, January 2026</span>
-      <p class="pub-excerpt">A workflow-free multi-agent paradigm in which a centralized information-flow orchestrator coordinates agents communicating in natural language, reaching 63.64% pass@1 on GAIA — +8.49% over a workflow-based baseline at comparable token cost.</p>
+      <p class="pub-excerpt">A workflow-free multi-agent paradigm in which a centralized information-flow orchestrator coordinates agents communicating in natural language, reaching 63.64% pass@1 on GAIA, +8.49% over a workflow-based baseline at comparable token cost.</p>
       <span class="pub-links">
         <a href="https://arxiv.org/abs/2601.09883">arXiv:2601.09883</a><span class="sep">·</span><a href="files/beyond-rule-based-workflows.bib">BibTeX</a><span class="sep">·</span><a href="publication/beyond-rule-based-workflows.html">details</a>
       </span>
@@ -82,9 +82,9 @@
       <span class="pub-title">SASD: Source-Aware Self-Distillation</span>
       <span class="pub-subtitle">Prompt-injection resistance trained into the weights, not bolted on at inference</span>
       <span class="pub-venue">In progress · targeting NeurIPS / ICLR</span>
-      <p class="pub-excerpt">An agent reads retrieved pages, tool output and its operator's instructions through one undifferentiated channel, with nothing recording which span came from where. Existing defenses patch this at inference — a detector in front of the model, or delimiters around the untrusted region — and both give way to an attacker who rewords the payload.</p>
-      <p class="pub-excerpt">SASD moves this into training. The student is optimized against a <strong>multi-teacher KL divergence objective</strong> where each teacher sees the same task under a different source condition, targeting the one for which the injected span was never present. Provenance ends up in the weights rather than policed by a wrapper at run time.</p>
-      <p class="pub-excerpt">Evaluated on <strong>AgentDojo</strong> against StruQ, SecAlign and MetaSecAlign, on attack templates held out at training. The decisive test is adaptive: a defense can reach zero attack success on fixed templates and still fall to an adversary optimizing against it.</p>
+      <p class="pub-excerpt">An agent reads retrieved pages, tool output and its operator's instructions through one undifferentiated channel, with nothing recording which span came from where. Existing defenses patch this at inference (a detector in front of the model, or delimiters around the untrusted region), and both give way to an attacker who rewords the payload.</p>
+      <p class="pub-excerpt">SASD moves this into training. The student is optimized against a <strong>multi-teacher KL divergence objective</strong> where each teacher sees the same task under a different source condition, targeting the one for which the injected span was never present. Source tracking ends up in the weights, instead of a wrapper policing the model at run time.</p>
+      <p class="pub-excerpt">Evaluating on prompt-injection benchmarks against the strongest current defenses, including adaptive attacks.</p>
       <p class="pub-excerpt">I am implementing the training stack and the injection benchmark suite. Happy to discuss the work directly.</p>
       <ul class="tags">
         <li>Prompt injection</li>
@@ -97,8 +97,8 @@
       <span class="pub-title">When Agents Architect: Design-Level Security Anti-Patterns in LLM-Generated Microservice Systems</span>
       <span class="pub-authors"><span class="me">Ahsen Tahir</span>, Francis Palma, Shazil Khan</span>
       <span class="pub-venue">In progress · University of New Brunswick</span>
-      <p class="pub-excerpt">Work on LLM-generated code security measures line-level weaknesses such as CWEs inside single functions. Agentic tools now emit whole multi-service systems, so we ask whether those systems carry <em>design-level</em> security anti-patterns — flaws committed when the architecture is decided, not when a line is written.</p>
-      <p class="pub-excerpt">We operationalize a catalog of anti-patterns from the microservice security-smells literature and build an agentic detector that indexes a repository, reconstructs its structural views, and returns a three-valued verdict per anti-pattern. The contribution is the unit of analysis — design patterns, not lines — and an agentic method where static analysis misses the class entirely.</p>
+      <p class="pub-excerpt">Work on LLM-generated code security measures line-level weaknesses such as CWEs inside single functions. Agentic tools now emit whole multi-service systems, so we ask whether those systems carry <em>design-level</em> security anti-patterns: flaws committed when the architecture is decided, not when a line is written.</p>
+      <p class="pub-excerpt">We operationalize a catalog of anti-patterns from the microservice security-smells literature and build an agentic detector that indexes a repository, reconstructs its structural views, and returns a three-valued verdict per anti-pattern. The contribution is the unit of analysis (design patterns, not lines) and an agentic method where static analysis misses the class entirely.</p>
     </div>
 
   </main>

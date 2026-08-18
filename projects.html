@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects — Ahsen Tahir</title>
+<title>Projects | Ahsen Tahir</title>
 <meta name="description" content="Selected engineering and applied machine learning projects by Ahsen Tahir.">
 <link rel="canonical" href="https://ahsentahir.github.io/projects.html">
 <link rel="icon" href="images/favicon.ico" sizes="any">
@@ -51,7 +51,7 @@
       <article class="project">
         <img src="images/projects/trendxbtc.jpg" alt="Trend-X-BTC">
         <div class="project-body">
-          <h3>Trend-X-BTC — sequence models for cryptocurrency forecasting</h3>
+          <h3>Trend-X-BTC: sequence models for cryptocurrency forecasting</h3>
           <p>A 30-day Bitcoin forecasting model: two stacked LSTM layers feeding <strong>4-head self-attention</strong>, with the attention output fused multiplicatively against the recurrent state before a dense projection. 35-step lookback window, dropout 0.3, trained with Adam under MSE.</p>
           <p>The interesting part is the feature set rather than the architecture. Four heterogeneous signal families are aligned onto one daily index: OHLCV from Binance, news sentiment from Alpha Vantage, the Fear &amp; Greed index, technical indicators from CryptoCompare, and macro series from FRED. Preprocessing uses a scikit-learn <code>ColumnTransformer</code> with standardization, plus Gaussian-noise augmentation to enlarge a short financial time series.</p>
           <div class="stack">PyTorch · LSTM + multi-head attention · scikit-learn · Firebase · Binance / Alpha Vantage / FRED APIs · Azure CI</div>
@@ -62,7 +62,7 @@
       <article class="project">
         <img src="images/projects/eeko-ai.jpg" alt="Eeko AI">
         <div class="project-body">
-          <h3>Eeko AI — vision-language models for smallholder agriculture</h3>
+          <h3>Eeko AI: vision-language models for smallholder agriculture</h3>
           <p>An agriculture assistant for smallholder farmers. <strong>Llama 3.2 11B Vision</strong>, served over Groq, runs the crop analyzer, insect detector and weed detector: field photographs are passed as base64 image content in a multimodal chat completion, under task-specific prompts that constrain the model to report growth stage, pest damage, canopy health, soil condition and density rather than free-form description.</p>
           <p>A second conversational agent grounds its answers in <strong>NASA LARC</strong> satellite data for the user's region, so recommendations reflect local conditions instead of generic advice. Built on Next.js 14 with Clerk authentication; it drew 439+ visitors within hours of launch.</p>
           <div class="stack">Llama 3.2 11B Vision · Groq · NASA LARC API · Next.js 14 · Clerk · Vercel</div>
@@ -73,7 +73,7 @@
       <article class="project">
         <img src="images/projects/vision-play.jpg" alt="VisionPlay">
         <div class="project-body">
-          <h3>VisionPlay — multi-object tracking in broadcast sports footage</h3>
+          <h3>VisionPlay: multi-object tracking in broadcast sports footage</h3>
           <p>Football match analysis from broadcast video. A fine-tuned <strong>YOLO</strong> detector feeds <strong>ByteTrack</strong> for identity-stable multi-object tracking; the ball, which drops out of detection frequently, is recovered by interpolating its bounding box across missed frames. Team assignment runs <strong>k-means</strong> over the upper half of each player crop, using a corner-cluster heuristic to separate jersey pixels from pitch background.</p>
           <p>The hard part is the camera. Broadcast footage pans and zooms constantly, so pixel coordinates say nothing about field position. Shi-Tomasi corners tracked by <strong>Lucas-Kanade pyramidal optical flow</strong> estimate per-frame camera translation, which is subtracted from every track before a <strong>perspective homography</strong> maps image points onto pitch coordinates. Only after that correction are the derived speed and distance metrics meaningful.</p>
           <div class="stack">YOLO (Ultralytics) · ByteTrack · OpenCV · Lucas-Kanade optical flow · homography · k-means · Python</div>

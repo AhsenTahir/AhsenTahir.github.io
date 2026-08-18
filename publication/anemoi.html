@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anemoi — Ahsen Tahir</title>
+<title>Anemoi | Ahsen Tahir</title>
 <meta name="description" content="A semi-centralized multi-agent system that replaces a single all-knowing planner with structured agent-to-agent communication, reaching 52.73% on GAIA.">
 <link rel="canonical" href="https://ahsentahir.github.io/publication/anemoi.html">
 <link rel="icon" href="../images/favicon.ico" sizes="any">
@@ -53,14 +53,14 @@
       <a href="https://arxiv.org/abs/2508.17068">arXiv:2508.17068</a><span class="sep">·</span><a href="../files/anemoi.bib">BibTeX</a>
     </p>
 
-    <p>Most LLM multi-agent systems funnel every decision through one central planner. That planner has to hold the entire task in context, which makes it both the performance ceiling and the single point of failure — and it forces you to pay for a large, expensive model in the one role you cannot afford to have fail.</p>
+    <p>Most LLM multi-agent systems funnel every decision through one central planner. That planner has to hold the entire task in context, which makes it both the performance ceiling and the single point of failure, and it forces you to pay for a large, expensive model in the one role you cannot afford to have fail.</p>
 
     <p><strong>Anemoi</strong> takes the opposite position. Worker agents talk to each other directly over an MCP server implementing an agent-to-agent (A2A) communication protocol, so the plan can be monitored and refined by the agents actually executing it rather than dictated up front by a planner that cannot see execution state.</p>
 
     <p>Results on the GAIA benchmark:</p>
 
     <ul>
-      <li><strong>52.73% accuracy</strong> using GPT-4.1-mini as the planner — a deliberately small model.</li>
+      <li><strong>52.73% accuracy</strong> using GPT-4.1-mini as the planner, a deliberately small model.</li>
       <li><strong>+9.09% over the OWL baseline</strong> under identical LLM settings.</li>
       <li>Improved scalability and robustness on long-horizon tasks, where centralized planning degrades most.</li>
     </ul>
@@ -68,7 +68,7 @@
     <p>The finding that matters: the coordination structure, not planner size, was the binding constraint. Distributing the planning burden let a smaller model outperform a centralized system built on a larger one.</p>
 
     <!-- TODO (Ahsen): uncomment the line below and describe what you ACTUALLY did on this paper.
-         As 4th of 9 authors this is the single highest-value sentence on the page — it is the
+         As 4th of 9 authors this is the single highest-value sentence on the page; it is the
          first thing a supervisor will ask you about. Left commented out so nothing unfinished
          renders publicly.
 

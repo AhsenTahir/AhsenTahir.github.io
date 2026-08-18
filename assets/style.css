@@ -1,9 +1,9 @@
 /* ============================================================
-   Ahsen Tahir — academic site
+   Ahsen Tahir: academic site
    Single stylesheet, no build step, no JS.
    ============================================================ */
 
-/* Dark theme, committed — the site renders dark regardless of the reader's
+/* Dark theme, committed: the site renders dark regardless of the reader's
    OS setting. The print block at the bottom flips back to black-on-white so
    Cmd-P on the CV still produces a normal printable page. */
 
@@ -201,7 +201,7 @@ h3 {
 
 p { margin: 0 0 1.05rem; }
 
-/* opening paragraph — slightly larger, sets the frame before the detail */
+/* opening paragraph: slightly larger, sets the frame before the detail */
 .lede {
   font-size: 1.12rem;
   line-height: 1.55;
@@ -491,7 +491,7 @@ a.pub-title:hover { color: var(--link); }
 
 @media print {
   /* Re-point the palette to ink-on-paper. Doing it at the token level means
-     every rule below inherits it — otherwise the dark --text would print as
+     every rule below inherits it; otherwise the dark --text would print as
      pale grey on white and the CV would be unreadable. */
   :root {
     --bg:          #fff;
