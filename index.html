@@ -68,8 +68,9 @@
 
     <h2>Research interests</h2>
     <ul>
-      <li><strong>LLM post-training:</strong> instruction tuning, preference optimization, RL from feedback</li>
-      <li><strong>AI safety:</strong> keeping models faithful to user intent under untrusted input</li>
+      <li><strong>LLM post-training:</strong> instruction tuning, preference optimization, knowledge distillation</li>
+      <li><strong>AI safety:</strong> keeping models faithful to user intent under untrusted input, prompt-injection defenses trained into the weights</li>
+      <li><strong>AI security:</strong> building and shipping software securely in a world where models write it and act on it</li>
       <li><strong>Agentic AI:</strong> coordination and communication among autonomous LLM agents</li>
       <li><strong>Evaluation:</strong> long-horizon agent tasks, and the security of code they generate</li>
     </ul>
@@ -80,7 +81,7 @@
       <span class="pub-title">SASD: Source-Aware Self-Distillation</span>
       <span class="pub-subtitle">A training-time defense against prompt injection</span>
       <span class="pub-venue">In progress · targeting NeurIPS / ICLR</span>
-      <p class="pub-excerpt">Detectors and delimiters added at inference fall to an attacker who rewords the payload. SASD pushes source tracking into the weights: each teacher sees the task under a different source condition, and the student targets the one that never saw the injected span. Tested against adaptive attacks, not just fixed templates. <a href="publications.html">More</a>.</p>
+      <p class="pub-excerpt">Detectors and delimiters added at inference fall to an attacker who rewords the payload. SASD pushes source tracking into the weights: each teacher sees the task under a different source condition, and the student targets the one that never saw the injected span. Tested against adaptive attacks, not just fixed templates. Reproduced and benchmarked existing prompt-injection defenses on AgentDojo, establishing baselines across prior methods; the proposed approach already beats them. Work in progress. <a href="publications.html">More</a>.</p>
       <ul class="tags">
         <li>Prompt injection</li>
         <li>Knowledge distillation</li>

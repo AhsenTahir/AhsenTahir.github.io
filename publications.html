@@ -84,8 +84,8 @@
       <span class="pub-venue">In progress · targeting NeurIPS / ICLR</span>
       <p class="pub-excerpt">An agent reads retrieved pages, tool output and its operator's instructions through one undifferentiated channel, with nothing recording which span came from where. Existing defenses patch this at inference (a detector in front of the model, or delimiters around the untrusted region), and both give way to an attacker who rewords the payload.</p>
       <p class="pub-excerpt">SASD moves this into training. The student is optimized against a <strong>multi-teacher KL divergence objective</strong> where each teacher sees the same task under a different source condition, targeting the one for which the injected span was never present. Source tracking ends up in the weights, instead of a wrapper policing the model at run time.</p>
-      <p class="pub-excerpt">Evaluating on prompt-injection benchmarks against the strongest current defenses, including adaptive attacks.</p>
-      <p class="pub-excerpt">I am implementing the training stack and the injection benchmark suite. Happy to discuss the work directly.</p>
+      <p class="pub-excerpt">Reproduced and benchmarked existing prompt-injection defenses on <strong>AgentDojo</strong>, establishing baselines across prior methods; the proposed approach already beats them, with ongoing experiments extending to privacy leakage and calibrated refusal.</p>
+      <p class="pub-excerpt">Work in progress. I am implementing the training stack and the injection benchmark suite. Happy to discuss the work directly.</p>
       <ul class="tags">
         <li>Prompt injection</li>
         <li>Knowledge distillation</li>
